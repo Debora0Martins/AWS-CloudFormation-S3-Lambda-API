@@ -24,12 +24,18 @@ Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, in
 - Node.js (JavaScript)
 - GitHub (versionamento e documentação)
 
-## Como Executar
-1. Acesse o AWS Console → CloudFormation  
-2. Crie a Stack com o template desejado  
-3. Configure a Lambda com variáveis de ambiente (`TABLE_NAME`)  
-4. Teste a Lambda usando JSON de exemplo:  
+## Como Executar## 
+
+1. Acesse o AWS Console → CloudFormation
+2. Crie a Stack com o template desejado
+3. Configure a Lambda com variáveis de ambiente (TABLE_NAME)
+4. Teste a Lambda usando JSON de exemplo:
 ```json
+{
+  "produto": "Caneta",
+  "preco": "2",
+  "quantidade": "30"
+}
 
 5. Verifique os logs no CloudWatch  
 6. Confirme a inserção no DynamoDB  

@@ -1,4 +1,4 @@
-# Desafio DIO - AWS Lambda + DynamoDB com CloudFormation
+oi# Desafio DIO - AWS Lambda + DynamoDB com CloudFormation
 
 ## Objetivo
 Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, integrando funções Lambda com DynamoDB, configurando variáveis de ambiente e documentando todo o processo.
@@ -55,7 +55,7 @@ Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permi
 Todos os prints estão na pasta `/images`
 
 
-### index.js da Lambda (/src/lambda/index.js)
+## index.js da Lambda (/src/lambda/index.js)
 ```javascript
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 const client = new DynamoDBClient({ region: "us-east-1" });

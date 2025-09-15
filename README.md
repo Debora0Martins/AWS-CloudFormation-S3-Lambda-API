@@ -37,8 +37,8 @@ Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, in
   "quantidade": "30"
 }
 
-5. Verifique os logs no CloudWatch  
-6. Confirme a inserção no DynamoDB  
+- Verifique os logs no CloudWatch  
+- Confirme a inserção no DynamoDB  
 
 ## Funcionalidades
 - Recebe dados de produto via JSON

@@ -57,9 +57,7 @@ Todos os prints estão na pasta `/images`
 
 ### index.js da Lambda (/src/lambda/index.js)
 ```javascript
-
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
-
 const client = new DynamoDBClient({ region: "us-east-1" });
 const TABLE_NAME = process.env.TABLE_NAME || "MinhaTabelaDemo";
 
@@ -86,7 +84,6 @@ exports.handler = async (event) => {
         return { statusCode: 500, body: JSON.stringify({ message: "Erro ao inserir", error: err.message }) };
     }
 };
-
 
 insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
 

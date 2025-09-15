@@ -54,10 +54,10 @@ Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permi
 ## Imagens
 Todos os prints estão na pasta `/images`
 
-## Código
 
 ### index.js da Lambda (/src/lambda/index.js)
 ```javascript
+
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const client = new DynamoDBClient({ region: "us-east-1" });

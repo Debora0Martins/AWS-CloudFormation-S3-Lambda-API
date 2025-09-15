@@ -86,8 +86,8 @@ exports.handler = async (event) => {
         return { statusCode: 500, body: JSON.stringify({ message: "Erro ao inserir", error: err.message }) };
     }
 };
-
 insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
+
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const client = new DynamoDBClient({ region: "us-east-1" });

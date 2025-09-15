@@ -24,7 +24,7 @@ Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, in
 - Node.js (JavaScript)
 - GitHub (versionamento e documentação)
 
-## Como Executar## 
+## Como Executar 
 
 1. Acesse o AWS Console → CloudFormation
 2. Crie a Stack com o template desejado

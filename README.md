@@ -37,8 +37,8 @@ Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, in
   "quantidade": "30"
 }
 
-- Verifique os logs no CloudWatch  
-- Confirme a inserção no DynamoDB  
+5. Verifique os logs no CloudWatch  
+6. Confirme a inserção no DynamoDB  
 
 ## Funcionalidades
 - Recebe dados de produto via JSON
@@ -54,25 +54,81 @@ Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permi
 ## Imagens
 Todos os prints estão na pasta `/images`
 
-  Recursos Úteis
+## Código
+
+### index.js da Lambda (/src/lambda/index.js)
+```javascript
+const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
+
+const client = new DynamoDBClient({ region: "us-east-1" });
+const TABLE_NAME = process.env.TABLE_NAME || "MinhaTabelaDemo";
+
+exports.handler = async (event) => {
+    const produto = event.produto || "ProdutoDemo";
+    const preco = event.preco || "0";
+    const quantidade = event.quantidade || "0";
+
+    const item = {
+        id: { S: Date.now().toString() },
+        produto: { S: produto },
+        preco: { N: preco.toString() },
+        quantidade: { N: quantidade.toString() }
+    };
+
+    const command = new PutItemCommand({ TableName: TABLE_NAME, Item: item });
+
+    try {
+        await client.send(command);
+        console.log("Item inserido:", item);
+        return { statusCode: 200, body: JSON.stringify({ message: "Item inserido!", item }) };
+    } catch (err) {
+        console.error("Erro:", err);
+        return { statusCode: 500, body: JSON.stringify({ message: "Erro ao inserir", error: err.message }) };
+    }
+};
+
+insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
+const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
+
+const client = new DynamoDBClient({ region: "us-east-1" });
+const TABLE_NAME = process.env.TABLE_NAME || "MinhaTabelaDemo";
+
+exports.insertItem = async (produto, preco, quantidade) => {
+    const item = {
+        id: { S: Date.now().toString() },
+        produto: { S: produto },
+        preco: { N: preco.toString() },
+        quantidade: { N: quantidade.toString() }
+    };
+
+    const command = new PutItemCommand({ TableName: TABLE_NAME, Item: item });
+
+    try {
+        await client.send(command);
+        console.log("Item inserido:", item);
+    } catch (err) {
+        console.error("Erro ao inserir item:", err);
+    }
+};
+
+Recursos Úteis
 
 Documentação Oficial AWS
-	•	AWS CloudFormation – Documentação completa para criar e gerenciar stacks.
-	•	AWS Lambda – Guia de funções Lambda, triggers e integração com outros serviços.
-	•	AWS DynamoDB – Tutoriais e referências sobre tabelas, tipos de dados e operações.
+	•	AWS CloudFormation
+	•	AWS Lambda
+	•	AWS DynamoDB
 
 Material DIO
-	•	Formação AWS na DIO – Cursos e laboratórios oficiais.
+	•	Formação AWS na DIO
 
 GitHub
-	•	Guia do GitHub – Como organizar repositórios, criar arquivos, commits e branches.
-	•	Markdown no GitHub – Guia rápido para formatação de README.md.
+	•	Guia do GitHub
+	•	Markdown no GitHub
 
 Extras
-	•	Node.js Documentation – Referência para JavaScript e Node.js.
-	•	Stack Overflow – Comunidade para tirar dúvidas técnicas.
+	•	Node.js Documentation
+	•	Stack Overflow
 
 ✍️ Autor: Débora Martins
 📌 Repositório criado como parte do desafio DIO — 2025
 📄 Licença: MIT
-

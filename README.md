@@ -54,9 +54,10 @@ Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permi
 ## Imagens
 Todos os prints estão na pasta `/images`
 
-## Codigo
-index.js da Lambda (/src/lambda/index.js)
+## Código
 
+### index.js da Lambda (/src/lambda/index.js)
+```javascript
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const client = new DynamoDBClient({ region: "us-east-1" });
@@ -86,9 +87,9 @@ exports.handler = async (event) => {
     }
 };
 
-## Dynamodb
 
 insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
+
 
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
@@ -112,27 +113,26 @@ exports.insertItem = async (produto, preco, quantidade) => {
         console.error("Erro ao inserir item:", err);
     }
 
----
 
-## Recursos Úteis
+  Recursos Úteis
 
-### Documentação Oficial AWS
-- [AWS CloudFormation](https://docs.aws.amazon.com/cloudformation/index.html) – Documentação completa para criar e gerenciar stacks.
-- [AWS Lambda](https://docs.aws.amazon.com/lambda/index.html) – Guia de funções Lambda, triggers e integração com outros serviços.
-- [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) – Tutoriais e referências sobre tabelas, tipos de dados e operações.
+Documentação Oficial AWS
+	•	AWS CloudFormation – Documentação completa para criar e gerenciar stacks.
+	•	AWS Lambda – Guia de funções Lambda, triggers e integração com outros serviços.
+	•	AWS DynamoDB – Tutoriais e referências sobre tabelas, tipos de dados e operações.
 
-### Material DIO
-- [Formação AWS na DIO](https://digitalinnovation.one/) – Cursos e laboratórios oficiais.
-- Laboratórios sobre Step Functions, Lambda e CloudFormation.
+Material DIO
+	•	Formação AWS na DIO – Cursos e laboratórios oficiais.
 
-### GitHub
-- [Guia do GitHub](https://docs.github.com/) – Como organizar repositórios, criar arquivos, commits e branches.
-- [Markdown no GitHub](https://guides.github.com/features/mastering-markdown/) – Guia rápido para formatação de README.md.
+GitHub
+	•	Guia do GitHub – Como organizar repositórios, criar arquivos, commits e branches.
+	•	Markdown no GitHub – Guia rápido para formatação de README.md.
 
-### Extras
-- [Node.js Documentation](https://nodejs.org/en/docs/) – Referência para JavaScript e Node.js.
-- [Stack Overflow](https://stackoverflow.com/) – Comunidade para tirar dúvidas técnicas.
+Extras
+	•	Node.js Documentation – Referência para JavaScript e Node.js.
+	•	Stack Overflow – Comunidade para tirar dúvidas técnicas.
 
 ✍️ Autor: Débora Martins
 📌 Repositório criado como parte do desafio DIO — 2025
 📄 Licença: MIT
+

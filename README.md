@@ -8,7 +8,7 @@ Consolidar o aprendizado sobre AWS Lambda, DynamoDB e CloudFormation criando uma
 2. Crie a Stack com o template desejado  
 3. Configure a Lambda com variáveis de ambiente (`TABLE_NAME`)  
 4. Teste a Lambda usando JSON de exemplo:
-```json
+json
 {
   "produto": "Caneta",
   "preco": "2",

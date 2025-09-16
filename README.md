@@ -1,34 +1,12 @@
-oi# Desafio DIO - AWS Lambda + DynamoDB com CloudFormation
+# Desafio DIO - AWS Lambda + DynamoDB
 
 ## Objetivo
-Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, integrando funções Lambda com DynamoDB, configurando variáveis de ambiente e documentando todo o processo.
+Consolidar o aprendizado sobre AWS Lambda, DynamoDB e CloudFormation criando uma função Lambda que insere itens em uma tabela DynamoDB e registra logs no CloudWatch.
 
-## O que foi feito
-- Criação de uma Stack no CloudFormation
-- Implementação de uma Lambda API
-- Integração da Lambda com DynamoDB para inserção de itens
-- Configuração de variáveis de ambiente
-- Teste da Lambda usando JSON de entrada
-- Registro de prints e logs do CloudWatch
-
-## Resultados
-- Lambda executando corretamente e inserindo itens no DynamoDB
-- Logs confirmando as operações
-- Documentação completa com prints e anotações
-- Estrutura pronta para estudo e referência futura
-
-## Tecnologias Utilizadas
-- AWS CloudFormation
-- AWS Lambda
-- AWS DynamoDB
-- Node.js (JavaScript)
-- GitHub (versionamento e documentação)
-
-## Como Executar 
-
-1. Acesse o AWS Console → CloudFormation
-2. Crie a Stack com o template desejado
-3. Configure a Lambda com variáveis de ambiente (TABLE_NAME)
+## Passos
+1. Acesse o AWS Console → CloudFormation  
+2. Crie a Stack com o template desejado  
+3. Configure a Lambda com variáveis de ambiente (`TABLE_NAME`)  
 4. Teste a Lambda usando JSON de exemplo:
 ```json
 {
@@ -37,27 +15,29 @@ Consolidar o aprendizado sobre AWS CloudFormation criando uma Stack completa, in
   "quantidade": "30"
 }
 
-5. Verifique os logs no CloudWatch  
-6. Confirme a inserção no DynamoDB  
+5.	Verifique os logs no CloudWatch
+	6.	Confirme a inserção no DynamoDB
 
-## Funcionalidades
-- Recebe dados de produto via JSON
-- Insere itens no DynamoDB
-- Loga erros e sucesso no CloudWatch
-- Permite variáveis de ambiente configuráveis
-- Estrutura modular para expandir funcionalidades
+Funcionalidades
+	•	Recebe dados de produto via JSON
+	•	Insere itens no DynamoDB
+	•	Loga erros e sucesso no CloudWatch
+	•	Permite variáveis de ambiente configuráveis
+	•	Estrutura modular para expandir funcionalidades
 
-## Aprendizado Pessoal
-Durante este desafio, aprendi a integrar Lambda com DynamoDB usando Node.js, lidar com variáveis de ambiente e configurar stacks CloudFormation.  
+Aprendizado Pessoal
+
+Durante este desafio, aprendi a integrar Lambda com DynamoDB usando Node.js, lidar com variáveis de ambiente e configurar stacks CloudFormation.
 Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permissões IAM, melhorando minha prática em AWS e automação de tarefas.
 
-## Imagens
-Todos os prints estão na pasta `/images`
+Imagens
 
-## Código
+Todos os prints estão na pasta /images
 
-### index.js da Lambda (/src/lambda/index.js)
-```javascript
+Código
+
+index.js da Lambda (/src/lambda/index.js)
+
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const client = new DynamoDBClient({ region: "us-east-1" });
@@ -86,6 +66,7 @@ exports.handler = async (event) => {
         return { statusCode: 500, body: JSON.stringify({ message: "Erro ao inserir", error: err.message }) };
     }
 };
+
 insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
 
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");

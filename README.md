@@ -25,18 +25,18 @@ Funcionalidades
 	•	Permite variáveis de ambiente configuráveis
 	•	Estrutura modular para expandir funcionalidades
 
-Aprendizado Pessoal
+## Aprendizado Pessoal
 
 Durante este desafio, aprendi a integrar Lambda com DynamoDB usando Node.js, lidar com variáveis de ambiente e configurar stacks CloudFormation.
 Identifiquei desafios em tipos de dados do DynamoDB e na configuração de permissões IAM, melhorando minha prática em AWS e automação de tarefas.
 
-Imagens
+## Imagens
 
 Todos os prints estão na pasta /images
 
 Código
 
-index.js da Lambda (/src/lambda/index.js)
+## index.js da Lambda (/src/lambda/index.js)
 
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
@@ -67,7 +67,7 @@ exports.handler = async (event) => {
     }
 };
 
-insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
+## insertItem.js do DynamoDB (/src/dynamodb/insertItem.js)
 
 const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
@@ -92,21 +92,21 @@ exports.insertItem = async (produto, preco, quantidade) => {
     }
 };
 
-Recursos Úteis
+## Recursos Úteis
 
 Documentação Oficial AWS
 	•	AWS CloudFormation
 	•	AWS Lambda
 	•	AWS DynamoDB
 
-Material DIO
+## Material DIO
 	•	Formação AWS na DIO
 
-GitHub
+## GitHub
 	•	Guia do GitHub
 	•	Markdown no GitHub
 
-Extras
+## Extras
 	•	Node.js Documentation
 	•	Stack Overflow
 

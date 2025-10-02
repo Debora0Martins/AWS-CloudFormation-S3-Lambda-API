@@ -1,6 +1,26 @@
 # DIO - AWS Lambda + DynamoDB
 
- AWS Lambda, DynamoDB e CloudFormation criando uma função Lambda que insere itens em uma tabela DynamoDB e registra logs no CloudWatch.
+Aplicação serverless AWS Lambda, DynamoDB e CloudFormation criando uma função Lambda que insere itens em uma tabela DynamoDB e registra logs no CloudWatch.
+
+## Serviços usados:
+
+AWS Lambda: Serviço de computação sem servidor que executa código em resposta a eventos.
+
+DynamoDB: Banco de dados NoSQL da AWS para armazenamento rápido e escalável de dados.
+
+CloudFormation: Serviço de infraestrutura como código, que permite criar e gerenciar recursos da AWS de forma automatizada.
+
+CloudWatch: Serviço de monitoramento e logs da AWS.
+
+O que fizemos no projeto:
+
+Criamos uma função Lambda que é responsável por processar dados de entrada.
+
+A função Lambda insere itens em uma tabela do DynamoDB, armazenando informações de forma estruturada e escalável.
+
+Registramos logs no CloudWatch, permitindo monitorar a execução da função, identificar erros e acompanhar o desempenho.
+
+Automatizamos a criação da infraestrutura usando CloudFormation, garantindo que a função Lambda, a tabela DynamoDB e as permissões necessárias fossem criadas de forma organizada e reproduzível.
 
 ## Passos
 1. Acesse o AWS Console → CloudFormation  

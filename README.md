@@ -1,7 +1,6 @@
-# Desafio DIO - AWS Lambda + DynamoDB
+# DIO - AWS Lambda + DynamoDB
 
-## Objetivo
-Consolidar o aprendizado sobre AWS Lambda, DynamoDB e CloudFormation criando uma função Lambda que insere itens em uma tabela DynamoDB e registra logs no CloudWatch.
+ AWS Lambda, DynamoDB e CloudFormation criando uma função Lambda que insere itens em uma tabela DynamoDB e registra logs no CloudWatch.
 
 ## Passos
 1. Acesse o AWS Console → CloudFormation  
